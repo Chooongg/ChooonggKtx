@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <application>
+
+        <provider
+            android:name=".ChoooonggFileProvider"
+            android:authorities="${applicationId}.chooongg.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/chooongg_provider_paths" />
+        </provider>
+
+    </application>
+
 </manifest>

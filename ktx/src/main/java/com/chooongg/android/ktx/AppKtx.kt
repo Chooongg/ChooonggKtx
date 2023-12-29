@@ -4,9 +4,11 @@ import android.app.Activity
 import android.app.Application
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import com.chooongg.android.manager.ActivityLifecycleManager
 import com.chooongg.android.manager.ApplicationManager
+import java.io.File
 
 val APPLICATION get() = ApplicationManager.application!!
 
@@ -53,12 +55,7 @@ fun Application.isServiceExisted(className: String): Boolean {
 fun isAppDebug(packageName: String = APPLICATION.packageName): Boolean {
     if (packageName.isEmpty()) return false
     return try {
-        val ai = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            APPLICATION.packageManager.getApplicationInfo(
-                packageName,
-                PackageManager.ApplicationInfoFlags.of(0)
-            )
-        } else APPLICATION.packageManager.getApplicationInfo(packageName, 0)
+        val ai = APPLICATION.packageManager.getApplicationInfo(packageName, 0)
         ai.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
     } catch (e: PackageManager.NameNotFoundException) {
         e.printStackTrace()
@@ -75,3 +72,4 @@ fun debug(init: () -> Unit) = if (isAppDebug()) init() else Unit
  * Release代码块
  */
 fun release(init: () -> Unit) = if (!isAppDebug()) init() else Unit
+

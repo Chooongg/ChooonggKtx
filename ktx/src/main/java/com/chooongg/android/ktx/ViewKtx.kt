@@ -2,42 +2,40 @@ package com.chooongg.android.ktx
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Interpolator
 import android.graphics.Rect
 import android.graphics.RectF
 import android.view.MotionEvent
 import android.view.View
+import android.view.animation.Animation
 import androidx.core.view.ViewCompat
+import java.time.Duration
 
 val View?.localVisibleRect: Rect get() = Rect().also { this?.getLocalVisibleRect(it) }
 val View?.globalVisibleRect: Rect get() = Rect().also { this?.getGlobalVisibleRect(it) }
 val View?.isRectVisible: Boolean get() = this != null && globalVisibleRect != localVisibleRect
 
 /**
- * 是否可见
- */
-val View?.isVisible: Boolean get() = this != null && visibility == View.VISIBLE
-
-/**
- * 可见
+ * 视图将可见
  */
 fun View.visible() = apply { if (visibility != View.VISIBLE) visibility = View.VISIBLE }
 
 /**
- * 不可见(占位)
+ * 视图将不可见(占位)
  */
 fun View.inVisible() = apply { if (visibility != View.INVISIBLE) visibility = View.INVISIBLE }
 
 /**
- * 不可见(不占位)
+ * 视图将不可见(不占位)
  */
 fun View.gone() = apply { if (visibility != View.GONE) visibility = View.GONE }
 
 /**
- * 是否是布局方向从右向左
+ * 视图是否是布局方向从右向左
  */
-val View.isRtl get() = ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL
+val View.isRtl get() = layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
 
-const val CLICK_INTERVAL = 600L
+const val CLICK_INTERVAL = 350L
 
 private var lastClickTime = 0L
 
