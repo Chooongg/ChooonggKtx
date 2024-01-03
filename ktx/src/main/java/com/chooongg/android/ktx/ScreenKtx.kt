@@ -27,6 +27,7 @@ fun getScreenXDpi() = Resources.getSystem().displayMetrics.xdpi
 
 fun getScreenYDpi() = Resources.getSystem().displayMetrics.ydpi
 
+@Suppress("DEPRECATION")
 fun getScreenScaledDensity() = Resources.getSystem().displayMetrics.scaledDensity
 
 fun Context.isLandscape() =

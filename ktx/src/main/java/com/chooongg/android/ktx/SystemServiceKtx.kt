@@ -36,9 +36,12 @@ import android.net.wifi.WifiManager
 import android.net.wifi.p2p.WifiP2pManager
 import android.nfc.NfcManager
 import android.os.BatteryManager
+import android.os.Build
 import android.os.DropBoxManager
 import android.os.PowerManager
 import android.os.UserManager
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.os.storage.StorageManager
 import android.print.PrintManager
 import android.telecom.TelecomManager
@@ -47,6 +50,7 @@ import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.CaptioningManager
 import android.view.inputmethod.InputMethodManager
 import android.view.textservice.TextServicesManager
+import androidx.annotation.RequiresApi
 
 inline val Context.accessibilityManager
     get() = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
@@ -140,3 +144,10 @@ inline val Context.wifiP2pManager
     get() = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
 inline val Context.wifiManager
     get() = getSystemService(Context.WIFI_SERVICE) as WifiManager
+inline val Context.vibratorManager
+    @RequiresApi(Build.VERSION_CODES.S)
+    get() = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+
+@Suppress("DEPRECATION")
+inline val Context.vibrator
+    get() = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator

@@ -33,7 +33,7 @@ fun View.gone() = apply { if (visibility != View.GONE) visibility = View.GONE }
 /**
  * 视图是否是布局方向从右向左
  */
-val View.isRtl get() = layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
+val View.isLayoutRtl get() = layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
 
 const val CLICK_INTERVAL = 350L
 
