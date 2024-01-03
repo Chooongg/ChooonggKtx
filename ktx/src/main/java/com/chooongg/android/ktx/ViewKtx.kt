@@ -2,14 +2,11 @@ package com.chooongg.android.ktx
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Interpolator
 import android.graphics.Rect
 import android.graphics.RectF
 import android.view.MotionEvent
 import android.view.View
-import android.view.animation.Animation
 import androidx.core.view.ViewCompat
-import java.time.Duration
 
 val View?.localVisibleRect: Rect get() = Rect().also { this?.getLocalVisibleRect(it) }
 val View?.globalVisibleRect: Rect get() = Rect().also { this?.getGlobalVisibleRect(it) }
