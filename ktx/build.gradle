@@ -33,3 +33,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     api 'androidx.startup:startup-runtime:1.2.0-alpha02'
 }
+
+ext {
+    GROUP_ID = 'com.chooongg.android'
+    ARTIFACT_ID = 'ktx'
+    DESCRIPTION = 'ChooonggKtx is a versatile Kotlin Extensions Library designed to enhance the functionality of your Kotlin projects. Developed by Chooongg, this open-source library aims to provide a collection of Kotlin extensions that seamlessly integrate with other repositories, enriching your development experience.'
+    URL_INFIX = 'github.com/Chooongg/ChooonggKtx'
+    GIT_INFIX = 'github.com:Chooongg/ChooonggKtx'
+}
+apply from: '../publish.gradle'
