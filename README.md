@@ -5,5 +5,5 @@ ChooonggKtx是一个通用的Kotlin扩展库，旨在增强Kotlin项目的功能
 ChooonggKtx is a versatile Kotlin Extensions Library designed to enhance the functionality of your Kotlin projects. Developed by Chooongg, this open-source library aims to provide a collection of Kotlin extensions that seamlessly integrate with other repositories, enriching your development experience.
 
 ```groovy
-implementation "com.chooongg.android:ktx:0.0.1"
+implementation "com.chooongg.android:ktx:0.0.2"
 ```
