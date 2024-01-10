@@ -6,7 +6,6 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.view.MotionEvent
 import android.view.View
-import androidx.core.view.ViewCompat
 
 val View?.localVisibleRect: Rect get() = Rect().also { this?.getLocalVisibleRect(it) }
 val View?.globalVisibleRect: Rect get() = Rect().also { this?.getGlobalVisibleRect(it) }
@@ -30,7 +29,7 @@ fun View.gone() = apply { if (visibility != View.GONE) visibility = View.GONE }
 /**
  * 视图是否是布局方向从右向左
  */
-val View.isLayoutRtl get() = layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
+val View.isLayoutRtl get() = layoutDirection == View.LAYOUT_DIRECTION_RTL
 
 const val CLICK_INTERVAL = 350L
 
