@@ -11,12 +11,12 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="com.chooongg.android.ChooonggUtilsInitializer"
+                android:name="com.chooongg.ChooonggUtilsInitializer"
                 android:value="androidx.startup" />
         </provider>
 
         <provider
-            android:name=".ChoooonggFileProvider"
+            android:name="com.chooongg.ChoooonggFileProvider"
             android:authorities="${applicationId}.chooongg.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
