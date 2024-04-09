@@ -11,18 +11,8 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="com.chooongg.ChooonggUtilsInitializer"
+                android:name="com.chooongg.ChooonggKtxInitializer"
                 android:value="androidx.startup" />
-        </provider>
-
-        <provider
-            android:name="com.chooongg.ChoooonggFileProvider"
-            android:authorities="${applicationId}.chooongg.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/chooongg_provider_paths" />
         </provider>
 
     </application>

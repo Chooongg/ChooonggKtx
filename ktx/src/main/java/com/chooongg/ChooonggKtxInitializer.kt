@@ -7,7 +7,7 @@ import com.chooongg.manager.ApplicationManager
 import com.chooongg.manager.NightModeManager
 
 @Suppress("unused")
-class ChooonggUtilsInitializer : Initializer<String> {
+class ChooonggKtxInitializer : Initializer<String> {
     override fun create(context: Context): String {
         ApplicationManager.initialize(context as Application)
         NightModeManager.initialize(context)

@@ -4,5 +4,5 @@ plugins {
     id 'com.android.library' version '8.2.1' apply false
 }
 ext {
-    VERSION_NAME = '0.0.2'
+    VERSION_NAME = '0.0.3'
 }
